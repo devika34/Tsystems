@@ -20,6 +20,7 @@ def work():
     Path('my_data.db').touch()
     conn = sqlite3.connect('my_data.db')
     c = conn.cursor()
+
     create_table = '''CREATE TABLE hello(
             [Type] text, [Days for shipping (real)]  text, [Days for shipment (scheduled)] text, [Benefit per order] text, [Sales per customer] text, [Delivery Status] text, [Late_delivery_risk] text, [Category Id] text, [Category Name] text, [Customer City] text, [Customer Country] text, [Customer Email] text, [Customer Fname] text, [Customer Id] text, [Customer Lname] text, [Customer Password] text, [Customer Segment] text, [Customer State] text, [Customer Street] text, [Customer Zipcode] text, [Department Id] text, [Department Name] text, [Latitude] text, [Longitude] text, [Market] text, [Order City] text, [Order Country] text, [Order Customer Id] text, [order date (DateOrders)] text, [Order Id] text, [Order Item Cardprod Id] text, [Order Item Discount] text, [Order Item Discount Rate] text, [Order Item Id] text, [Order Item Product Price] text, [Order Item Profit Ratio] text, [Order Item Quantity] text, [Sales] text, [Order Item Total] text, [Order Profit Per Order] text, [Order Region] text, [Order State] text, [Order Status] text, [Order Zipcode] text, [Product Card Id] text, [Product Category Id] text, [Product Description] text, [Product Image] text, [Product Name] text, [Product Price] text, [Product Status] text, [shipping date (DateOrders)] text, [Shipping Mode] text);
             '''
@@ -31,7 +32,7 @@ def work():
     for i in range(100):
         contents1.append(contents[i])
     
-    insert_records = "INSERT INTO hello ([Type], [Days for shipping (real)], [Days for shipment (scheduled)], [Benefit per order], [Sales per customer], [Delivery Status], [Late_delivery_risk], [Category Id], [Category Name], [Customer City], [Customer Country], [Customer Email], [Customer Fname], [Customer Id], [Customer Lname], [Customer Password], [Customer Segment], [Customer State], [Customer Street], [Customer Zipcode], [Department Id], [Department Name], [Latitude], [Longitude], [Market], [Order City], [Order Country], [Order Customer Id], [order date (DateOrders)], [Order Id], [Order Item Cardprod Id], [Order Item Discount], [Order Item Discount Rate], [Order Item Id], [Order Item Product Price], [Order Item Profit Ratio], [Order Item Quantity], [Sales], [Order Item Total], [Order Profit Per Order], [Order Region], [Order State], [Order Status], [Order Zipcode], [Product Card Id], [Product Category Id], [Product Description], [Product Image], [Product Name], [Product Price], [Product Status], [shipping date (DateOrders)], [Shipping Mode]) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
+    insert_records = "INSERT INTO hello([Type], [Days for shipping (real)], [Days for shipment (scheduled)], [Benefit per order], [Sales per customer], [Delivery Status], [Late_delivery_risk], [Category Id], [Category Name], [Customer City], [Customer Country], [Customer Email], [Customer Fname], [Customer Id], [Customer Lname], [Customer Password], [Customer Segment], [Customer State], [Customer Street], [Customer Zipcode], [Department Id], [Department Name], [Latitude], [Longitude], [Market], [Order City], [Order Country], [Order Customer Id], [order date (DateOrders)], [Order Id], [Order Item Cardprod Id], [Order Item Discount], [Order Item Discount Rate], [Order Item Id], [Order Item Product Price], [Order Item Profit Ratio], [Order Item Quantity], [Sales], [Order Item Total], [Order Profit Per Order], [Order Region], [Order State], [Order Status], [Order Zipcode], [Product Card Id], [Product Category Id], [Product Description], [Product Image], [Product Name], [Product Price], [Product Status], [shipping date (DateOrders)], [Shipping Mode]) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
 
     # Importing the contents of the file
     # into our person table
@@ -186,8 +187,8 @@ text_input=""
 submit_button=''
 
 with st.form(key='my_form'):
-	text_input = st.text_input(label='Input the query you want the output for?')
-	submit_button = st.form_submit_button(label='Run Query')
+    text_input = st.text_input(label='Input the query you want the output for?')
+    submit_button = st.form_submit_button(label='Run Query')
 	#st.write(submit_button)
 	
 	#st.write(db)
